@@ -1,0 +1,202 @@
+/* Tailwind CSS directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import custom Tailwind styles */
+@import "./tailwind-custom.css";
+
+/* Existing Bootstrap and other CSS imports */
+@import "./../../public/css/bootstrap.min.css";
+@import "./../../public/css/flaticon.css";
+@import "./../../public/css/bootstrap-select.min.css";
+
+@import "./../../public/css/style.css";
+@import "./../../public/css/ud-custom-spacing.css";
+@import "./../../public/css/dashbord_navitaion.css";
+@import "./../../public/css/custom.css";
+a {
+  cursor: pointer;
+}
+.cp {
+  cursor: pointer;
+}
+
+.react-calendar {
+  margin-top: -55px !important;
+}
+/* slider arrow end*/
+
+@media (min-width: 1400px) {
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl,
+  .container-xxl {
+    max-width: 1430px;
+  }
+}
+
+.price__range__box .example-track-2,
+.price__range__box .example-track-0 {
+  background-color: #f7f7f7;
+  height: 4px;
+}
+
+.price__range__box .example-track-1 {
+  background-color: #5bbb7b;
+  height: 4px;
+}
+
+.price__range__box .example-thumb.active {
+  outline: none;
+}
+
+.price__range__box .example-thumb {
+  background-color: #ffffff;
+  border: 2px solid #5bbb7b !important;
+  border-radius: 50%;
+  height: 12px;
+  width: 12px;
+  top: -4px;
+  cursor: pointer;
+}
+
+.ui-hero-10 {
+  position: absolute;
+  bottom: 32px;
+  z-index: 99;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.ui-clear-btn {
+  padding: 6px 14px !important;
+}
+
+.cluster div {
+  text-align: center;
+  font-size: 16px !important;
+  color: #fff !important;
+  font-weight: 400 !important;
+  border-radius: 50%;
+  width: 36px !important;
+  height: 36px !important;
+  line-height: 36px !important;
+  background-color: #021f4a;
+  border: 7px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 7px 30px rgba(33, 33, 33, 0.3);
+  box-sizing: content-box;
+  background-clip: content-box;
+}
+
+.ui-tooltip {
+  height: unset;
+  line-height: 0;
+  font-size: 14px;
+  padding: 18px 10px !important;
+  z-index: 99;
+}
+.ui-active,
+.ui-navigation .ui-active {
+  color: #5bbb7b !important;
+}
+
+.ui-navigation .ui-child-active {
+  background-color: #f0efec !important;
+  border-left: 2px solid #5bbb7b !important;
+}
+
+/* sidebar navigation */
+.ui-navigation-sidebar .css-dip3t8 {
+  background-color: transparent;
+}
+
+.ui-navigation-sidebar .css-1wvake5 {
+  width: 100%;
+  border-right: none;
+}
+
+.ui-mobile-active > .ps-menu-button {
+  color: #5bbb7b !important;
+}
+
+.css-jn69v9,
+.css-honxw6 {
+  height: 8px !important;
+  width: 8px !important;
+}
+
+/* delete btn */
+.ui-delete-btn {
+  background-color: #c72c2c;
+  height: 30px;
+  width: 30px;
+  top: -8px;
+  right: 0px;
+  border: none;
+  color: #fff;
+  border-radius: 50%;
+  transition: all 0.3s;
+}
+
+.ui-delete-btn:hover {
+  background-color: #af2424;
+}
+
+.ui-fav-active {
+  background-color: #5bbb7b !important;
+  color: #fff !important;
+}
+
+/* hero search list active */
+.ui-list-active {
+  background-color: #5bbb7b;
+}
+
+.ui-list-active .item_title {
+  color: #fff;
+}
+
+/* socal media incon popup */
+
+.ui-share-toggle:hover {
+  color: unset !important;
+}
+
+.ui-social-media {
+  position: absolute;
+  background-color: #fff;
+  top: -3.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 8px 20px;
+  border-radius: 8px;
+}
+
+.ui-social-media::after {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-right: 10px solid transparent;
+  border-left: 10px solid transparent;
+  border-top: 10px solid #ddd;
+  border-bottom: 10px solid transparent;
+}
+.ui-social-media a i {
+  transition: all 0.4s;
+  color: #222222;
+}
+.ui-social-media a:hover i {
+  color: #5bbb7b !important;
+}
+.react-date-picker__wrapper {
+  border: none !important;
+}

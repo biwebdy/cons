@@ -1,0 +1,271 @@
+/* Custom font faces - keep these as they are since Tailwind doesn't handle font-face */
+@font-face {
+  font-family: "NunitoSans-Bold";
+  src: url(../../public/fonts/NunitoSans-Bold.ttf);
+}
+@font-face {
+  font-family: "ProximaNova.ttf";
+  src: url(../../public/fonts/ProximaNova.ttf);
+}
+
+/* Font utility classes */
+.nsan {
+  font-family: "NunitoSans-Bold";
+}
+.proxima {
+  font-family: "ProximaNova.ttf";
+}
+
+/* Typography base styles - apply directly without tailwind scoping */
+h1 {
+  font-family: "ProximaNova.ttf";
+  font-size: 68px;
+  line-height: 60px;
+}
+
+h2 {
+  font-family: "ProximaNova.ttf";
+  font-size: 45px;
+  line-height: 40px;
+}
+
+h3 {
+  font-family: "ProximaNova.ttf";
+  font-size: 30px;
+  line-height: 28px;
+}
+
+h4 {
+  font-family: "ProximaNova.ttf";
+  font-size: 24px;
+  line-height: 22px;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 38px;
+    line-height: 40px;
+  }
+
+  h2 {
+    font-size: 20px;
+    line-height: 24px;
+  }
+}
+
+/* Background images - can't be easily converted to Tailwind, keep as custom classes */
+.home-bnr {
+  background-image: url(../../public/images/home/banner.jpg);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  height: auto;
+  justify-content: center;
+  position: relative;
+  box-shadow: inset 0 0 0 1000px rgba(6, 22, 59, 0.55);
+}
+.client-personalized-bnr {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  position: relative;
+  height: 500px;
+  background-color: #083b5d;
+}
+
+.browse-cons-bnr {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  position: relative;
+  height: 500px;
+}
+
+.cons-profile-bnr {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  position: relative;
+  height: 500px;
+}
+.browse-cons-bnr,
+.cons-profile-bnr,
+.profile-bnr {
+  @apply bg-[#083B5D] bg-none h-[200px] md:h-[500px];
+}
+
+/* Button styles that need to be preserved */
+.tailwind .btn-prm {
+  @apply bg-[#f0bc68] text-black border-none py-5 px-[30px] rounded-[10px] text-lg font-bold cursor-pointer font-['NunitoSans-Bold'] whitespace-nowrap;
+}
+.tailwind .btn-prm:hover {
+  @apply bg-[#f0bc68] text-black;
+}
+
+.tailwind .btn-scn {
+  @apply bg-[#a09ea5] text-[#083B5D] border-none py-5 px-[30px] rounded-[10px] text-lg font-bold cursor-pointer font-['NunitoSans-Bold'] whitespace-nowrap;
+}
+.tailwind .btn-scn:hover {
+  @apply bg-[#a09ea5] text-[#083B5D];
+}
+
+.tailwind .btn-tri {
+  @apply bg-[#083B5D] text-white border-none py-5 px-[30px] rounded-[10px] text-lg font-bold cursor-pointer font-['NunitoSans-Bold'] whitespace-nowrap;
+}
+
+.tailwind .btn-danger {
+  @apply bg-[#880808] text-white border-none py-5 px-[30px] rounded-[10px] text-lg font-bold cursor-pointer font-['NunitoSans-Bold'];
+}
+
+/* Custom utilities */
+.tailwind .rotate-45 {
+  @apply transform rotate-[-45deg] ml-[10px];
+}
+
+.navlist {
+  @apply w-[200px] absolute top-[75px] right-[30px];
+}
+
+.hero-content {
+  @apply pt-[180px] pb-[120px];
+}
+
+/* Media query equivalents */
+@media only screen and (max-width: 768px) {
+  .hero-title {
+    @apply mt-[170px];
+  }
+  .client-personalized-bnr {
+    @apply bg-[#083B5D] bg-none h-[700px];
+  }
+  .hero-content {
+    @apply pt-[10px] pb-[20px];
+  }
+  section,
+  .section {
+    @apply p-0;
+  }
+}
+
+/* Custom Tailwind utility classes */
+.blue-bg {
+  background-color: #083b5d;
+}
+.text-blue {
+  color: #083b5d !important;
+}
+.text-yellow {
+  color: #f0bc68 !important;
+}
+.dark-grey-bg {
+  background-color: #e4dbd6;
+}
+.grey-bg {
+  background-color: #faf7f6 !important;
+}
+
+/* Other utility classes */
+.a-yellow:hover {
+  @apply text-[#f0bc68] !important;
+}
+
+.hide-mobile {
+  @apply md:hidden;
+}
+
+.dropup .dropdown-menu {
+  @apply top-auto bottom-full mb-[0.125rem] translate-y-[-5px];
+}
+
+.tailwind hr {
+  @apply border border-white opacity-100;
+}
+
+.navtab-style1,
+.navtab-style2 {
+  @apply relative;
+}
+.navtab-style1 .nav-tabs,
+.navtab-style2 .nav-tabs {
+  @apply border-b border-[#e9e9e9] transition-all;
+}
+.navtab-style1 .nav-link,
+.navtab-style2 .nav-link {
+  @apply border-2 border-transparent text-[#697488] transition-all;
+}
+.navtab-style1 .nav-link:hover,
+.navtab-style2 :hover {
+  @apply border-2 border-transparent;
+}
+.navtab-style1 .nav-link.active,
+.navtab-style2 .nav-link.active {
+  @apply border-2 border-transparent border-b-2 border-[#083B5D] text-[#222222];
+}
+
+.table-style3 {
+  @apply min-w-full border-spacing-0 border-separate;
+}
+
+.table-style3 .t-head {
+  @apply bg-[#faf7f6] rounded-[4px];
+}
+
+.table-style3 .t-head th {
+  @apply border-0 font-medium text-[17px] p-[20px_30px] bg-[#faf7f6] whitespace-nowrap;
+}
+
+.table-style3 .t-body th {
+  @apply font-medium text-[15px] p-[30px] align-middle bg-[#faf7f6] whitespace-nowrap;
+}
+
+.table-style3 .t-body td {
+  @apply font-normal p-[30px] align-middle bg-[#faf7f6] whitespace-nowrap;
+}
+
+.table-style3 .t-body tr:last-child {
+  @apply border-transparent;
+}
+
+.table-style3 .icon {
+  @apply bg-[#ffede8] rounded-[4px] text-[#1f4b3f] block h-[40px] leading-[45px] text-center w-[40px];
+}
+
+.table-style3.at-savesearch .t-body tr:last-child {
+  @apply border-[#e9e9e9];
+}
+
+/* Add horizontal scrolling container */
+.table-responsive {
+  @apply overflow-x-auto w-full;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.table-responsive::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  background: transparent;
+}
+
+.table-responsive::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+.table-responsive::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.tw-forminput {
+  @apply block w-full rounded-md  px-3 py-4 text-sm shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500;
+  border: 1px solid #e9e9e9;
+}
