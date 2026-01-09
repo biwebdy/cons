@@ -1,0 +1,242 @@
+@font-face {
+  font-family: "NunitoSans-Bold";
+  src: url(../fonts/NunitoSans-Bold.ttf);
+}
+@font-face {
+  font-family: "ProximaNova.ttf";
+  src: url(../fonts/ProximaNova.ttf);
+}
+h1 {
+  font-family: "ProximaNova.ttf";
+  font-size: 68px;
+  line-height: 60px;
+}
+h2 {
+  font-family: "ProximaNova.ttf";
+  font-size: 45px;
+  line-height: 40px;
+}
+h3 {
+  font-family: "ProximaNova.ttf";
+  font-size: 30px;
+  line-height: 28px;
+}
+h4 {
+  font-family: "ProximaNova.ttf";
+  font-size: 24px;
+  line-height: 22px;
+}
+.nsan {
+  font-family: "NunitoSans-Bold";
+}
+.proxima {
+  font-family: "ProximaNova.ttf";
+}
+.text-white {
+  color: #fff !important;
+}
+
+hr {
+  border: 1px solid white;
+  opacity: 1;
+}
+
+.blue-bg {
+  background-color: #083b5d;
+}
+.text-blue {
+  color: #083b5d !important;
+}
+.text-yellow {
+  color: #f0bc68 !important;
+}
+.text-right {
+  text-align: right !important;
+}
+.dark-grey-bg {
+  background-color: #e4dbd6;
+}
+.grey-bg {
+  background-color: #faf7f6 !important;
+}
+.text-black {
+  color: #000 !important;
+}
+
+.home-bnr {
+  background-image: url(../images/home/banner.png);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  height: auto;
+  justify-content: center;
+  position: relative;
+  box-shadow: inset 0 0 0 1000px rgba(6, 22, 59, 0.55);
+}
+.client-personalized-bnr {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  position: relative;
+  height: 500px;
+}
+.browse-cons-bnr {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  position: relative;
+  height: 500px;
+}
+
+.cons-profile-bnr {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  position: relative;
+  height: 500px;
+}
+.a-yellow:hover {
+  color: #f0bc68 !important;
+}
+
+.navlist {
+  width: 200px;
+  position: absolute;
+  top: 75px;
+  right: 30px;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 38px;
+    line-height: 40px;
+  }
+  h2 {
+    font-size: 22px;
+    line-height: 24px;
+  }
+
+  .hero-title {
+    margin-top: 170px;
+  }
+  .client-personalized-bnr {
+    background-color: #083b5d;
+    background-image: none;
+    height: 700px;
+  }
+
+  .container {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+.btn-prm {
+  background-color: #f0bc68;
+  color: #000;
+  border: none;
+  padding: 20px 30px;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: "bolder";
+  cursor: pointer;
+  font-family: "NunitoSans-Bold";
+  white-space: nowrap;
+}
+.btn-prm:hover {
+  background-color: #f0bc68;
+  color: #000;
+}
+
+.btn-scn {
+  background-color: #a09ea5;
+  color: #083b5d;
+  border: none;
+  padding: 20px 30px;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: "bolder";
+  cursor: pointer;
+  font-family: "NunitoSans-Bold";
+  white-space: nowrap;
+}
+.btn-scn:hover {
+  background-color: #a09ea5;
+  color: #083b5d;
+}
+
+.btn-tri {
+  background-color: #083b5d;
+  color: #fff;
+  border: none;
+  padding: 20px 30px;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: "bolder";
+  cursor: pointer;
+  font-family: "NunitoSans-Bold";
+  white-space: nowrap;
+}
+
+.btn-danger {
+  background-color: #880808;
+  color: #fff;
+  border: none;
+  padding: 20px 30px;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: "bolder";
+  cursor: pointer;
+  font-family: "NunitoSans-Bold";
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.rotate-45 {
+  transform: rotate(-45deg);
+  margin-left: 10px;
+}
+.dropup .dropdown-menu {
+  top: auto; /* Reset any top positioning */
+  bottom: 100%; /* Position the dropdown above the button */
+  margin-bottom: 0.125rem;
+  transform: translateY(
+    -5px
+  ); /* Optional: Add a slight upward offset for style */
+}
+
+.hero-content {
+  padding-top: 180px;
+  padding-bottom: 120px;
+}
+@media only screen and (max-width: 760px) {
+  .hide-mobile {
+    display: none;
+  }
+  .hero-content {
+    padding-top: 10px;
+    padding-bottom: 20px;
+  }
+
+  section {
+    padding: 0px;
+  }
+  .section {
+    padding: 0px;
+  }
+}
