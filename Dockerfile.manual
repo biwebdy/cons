@@ -1,0 +1,28 @@
+# Build Stage
+FROM node:20.18.0-alpine AS builder
+WORKDIR /app
+COPY package*.json ./
+RUN npm i --omt=dev
+COPY . .
+RUN npm run build
+
+# Production Stage
+FROM node:20.18.0-alpine AS runner
+WORKDIR /app
+
+ENV NODE_TLS_REJECT_UNAUTHORIZED=0
+
+COPY --from=builder /app/package-lock.json .
+COPY --from=builder /app/next.config.mjs ./
+COPY --from=builder /app/public ./public
+COPY --from=builder /app/.next/standalone ./
+COPY --from=builder /app/.next/static ./.next/static
+
+# Modify server.js
+#RUN sed -i 's/const hostname = process.env.HOSTNAME || '\''0.0.0.0'\''/const hostname = '\''127.0.0.1'\''/' server.js
+
+ # Install sharp
+RUN npm install sharp
+
+EXPOSE 3000
+CMD ["node", "server.js"]

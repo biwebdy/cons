@@ -1,0 +1,57 @@
+# Build Stage
+FROM node:20.18.0-alpine AS builder
+WORKDIR /app
+
+# Copy package files and install dependencies
+COPY package*.json ./
+RUN npm i
+
+# Copy the rest of the application files
+COPY . .
+
+# Define build-time arguments
+ARG STRAPI_URL
+ARG BRANCH
+
+# Set environment variable for STRAPI_URL
+ENV STRAPI_URL=${STRAPI_URL}
+
+# Copy the correct .env file based on the branch and replace STRAPI_URL
+RUN if [ "$BRANCH" = "develop" ]; then \
+  echo "Using .env.develop for develop branch"; \
+  cp .env.develop .env; \
+    elif [ "$BRANCH" = "beta" ]; then \
+  echo "Using .env.beta for beta branch"; \
+  cp .env.beta .env; \
+    else \
+  echo "Using .env.prod for main branch"; \
+  cp .env.main .env; \
+    fi && \
+    sed -i "s|^STRAPI_URL=.*|STRAPI_URL=\"${STRAPI_URL}\"|" .env
+
+# Build the application
+RUN npm run build
+
+# Production Stage
+FROM node:20.18.0-alpine AS runner
+LABEL expertree=true
+WORKDIR /app
+
+# Disable TLS verification (if required)
+ENV NODE_TLS_REJECT_UNAUTHORIZED=0
+
+# Copy necessary files from the builder stage
+COPY --from=builder /app/package-lock.json .
+COPY --from=builder /app/next.config.mjs ./
+COPY --from=builder /app/public ./public
+COPY --from=builder /app/.next/standalone ./
+COPY --from=builder /app/.next/static ./.next/static
+
+# Install sharp (for image processing)
+RUN npm install sharp
+
+# Expose the application port
+EXPOSE 3000
+
+# Start the application
+CMD ["node", "server.js"]
